@@ -1,0 +1,7 @@
+[user]
+	name = Domagoj Latečki
+	email = domagoj.latecki@hibob.io
+[core]
+	editor = vim
+[init]
+	defaultBranch = main
