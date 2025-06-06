@@ -27,7 +27,7 @@ if ! shopt -oq posix; then
 fi
 
 declare -A JAVA_VERSIONS=(
-    [8]=~/.jdks/corretto-1.8.0_402
+    #[8]=~/.jdks/corretto-1.8.0_402
     #[8]="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
     #["G8"]="/Library/Java/JavaVirtualMachines/graalvm-ce-java8-21.0.0/Contents/Home/"
     #[10]=$(/usr/libexec/java_home -v10)
@@ -35,13 +35,13 @@ declare -A JAVA_VERSIONS=(
     #[13]=$(/usr/libexec/java_home -v13)
     #[15]=$(/usr/libexec/java_home -v15)
     #[17]=$(/usr/libexec/java_home -v17)
-    [21]=/usr/lib/jvm/java-21-openjdk-amd64
+    [Default]=/usr/bin/java
 )
-ACTIVE_JAVA_VERSION=21
+ACTIVE_JAVA_VERSION=Default
 
 export JAVA_HOME="${JAVA_VERSIONS[$ACTIVE_JAVA_VERSION]}"
-export SCALA_HOME="$HOME/.local/share/coursier/bin/scala"
-export KOTLIN_HOME="/usr/bin/kotlin"
+#export SCALA_HOME="$HOME/.local/share/coursier/bin/scala"
+#export KOTLIN_HOME="/usr/bin/kotlin"
 export PATH="${JAVA_HOME}/bin:${PATH}"
 
 if [ -f ~/.bash_aliases ]; then
